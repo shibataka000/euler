@@ -52,4 +52,19 @@ class MathSpec extends Specification {
       MyMath.primes.takeWhile(_<100) must beEqualTo(List(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97))
     }
   }
+
+  "decompose" should {
+    "return List(1) as decomposed numbers of 1" in {
+      MyMath.decompose(1) must beEqualTo(List(1))
+    }
+    "return List(2) as decomposed numbers of 2" in {
+      MyMath.decompose(2) must beEqualTo(List(2))
+    }
+    "return List(2,2) as decomposed numbers of 4" in {
+      MyMath.decompose(4) must beEqualTo(List(2, 2))
+    }
+    "return List(5,7,13,29) as decomposed numbers of 13195" in {
+      MyMath.decompose(13195) must beEqualTo(List(5, 7, 13, 29))
+    }
+  }
 }

@@ -13,4 +13,13 @@ object Math {
     def helper(l: Stream[BigInt]): Stream[BigInt] = l.head #:: helper(l.filter(_ % l.head != 0))
     2 #:: helper(from(3, 2))
   }
+
+  def decompose(n: BigInt): List[BigInt] = {
+    def helper(a: BigInt, ps: Stream[BigInt]): List[BigInt] = 
+      if (a == 1) Nil
+      else if (a % ps.head == 0) ps.head :: helper(a / ps.head, ps)
+      else helper(a, ps.tail)
+    if (n == 1) List(1)
+    else helper(n, primes)
+  }
 }
