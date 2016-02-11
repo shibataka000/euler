@@ -22,4 +22,6 @@ object Math {
     if (n == 1) List(1)
     else helper(n, primes)
   }
+
+  def isPalindromicNumber(n: BigInt): Boolean = n.toString == n.toString.reverse
 }
