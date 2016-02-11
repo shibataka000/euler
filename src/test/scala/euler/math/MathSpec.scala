@@ -34,4 +34,22 @@ class MathSpec extends Specification {
       MyMath.fibonacci.take(10) must beEqualTo(List(1, 2, 3, 5, 8, 13, 21, 34, 55, 89))
     }
   }
+
+  "from" should {
+    "return 0,1,2,3,4,5,6,7,8,9 as first 10 elements" in {
+      MyMath.from(0).take(10).toList must beEqualTo(List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9))
+    }
+    "return 0,2,4,6,8,10,12,14,16,18 as first 10 elements when step 2 is given" in {
+      MyMath.from(0, 2).take(10).toList must beEqualTo(List(0, 2, 4, 6, 8, 10, 12, 14, 16, 18))
+    }
+    "return 0,-1,-2,-3,-4,-5,-6,-7,-8,-9 as first 10 elements when step -1 is given" in {
+      MyMath.from(0, -1).take(10).toList must beEqualTo(List(0, -1, -2, -3, -4, -5, -6, -7, -8, -9))
+    }
+  }
+
+  "primes" should {
+    "return correct primes while < 100" in {
+      MyMath.primes.takeWhile(_<100) must beEqualTo(List(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97))
+    }
+  }
 }
