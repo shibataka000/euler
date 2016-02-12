@@ -4,6 +4,6 @@ import euler.problem._
 
 object Main {
   def main(args: Array[String]) = {
-    println(Problem04.solve)
+    println(Problem05.solve)
   }
 }
