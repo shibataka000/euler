@@ -67,4 +67,25 @@ class MathSpec extends Specification {
       MyMath.decompose(13195) must beEqualTo(List(5, 7, 13, 29))
     }
   }
+
+  "gcd" should {
+    "return 6 as gcd(18, 12)" in {
+      MyMath.gcd(12, 18) must beEqualTo(6)
+    }
+    "return 9 as gcd(27, 18)" in {
+      MyMath.gcd(27, 18) must beEqualTo(9)
+    }
+    "return 1 as gcd(2, 3)" in {
+      MyMath.gcd(2, 3) must beEqualTo(1)
+    }
+  }
+
+  "lcm" should {
+    "return 36 as lcm(18, 12)" in {
+      MyMath.lcm(12, 18) must beEqualTo(36)
+    }
+    "return 54 as lcm(27, 12)" in {
+      MyMath.lcm(27, 18) must beEqualTo(54)
+    }
+  }
 }

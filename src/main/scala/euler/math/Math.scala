@@ -24,4 +24,11 @@ object Math {
   }
 
   def isPalindromicNumber(n: BigInt): Boolean = n.toString == n.toString.reverse
+
+  def gcd(a: BigInt, b: BigInt): BigInt =
+    if (b > a) gcd(b, a)
+    else if (b == 0) a
+    else gcd(b, a % b)
+
+  def lcm(a: BigInt, b: BigInt): BigInt = a * b / gcd(a, b)
 }
