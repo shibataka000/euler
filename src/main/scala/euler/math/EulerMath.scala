@@ -1,6 +1,6 @@
 package euler.math
 
-object Math {
+object EulerMath {
   def even(n: BigInt) = n % 2 == 0
 
   def odd(n: BigInt) = n % 2 != 0

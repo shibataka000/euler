@@ -1,7 +1,7 @@
 package euler.problem
 
-import euler.math.{Math => MyMath}
+import euler.math.EulerMath
 
 object Problem02 {
-  def solve = MyMath.fibonacci.takeWhile(x => x < 4000000).filter(MyMath.even).sum
+  def solve = EulerMath.fibonacci.takeWhile(x => x < 4000000).filter(EulerMath.even).sum
 }
