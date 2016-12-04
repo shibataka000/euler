@@ -1,7 +1,5 @@
 package euler.math
 
-import euler.math.EulerMath
-
 import org.specs2.mutable.Specification
 
 class MathSpec extends Specification {
