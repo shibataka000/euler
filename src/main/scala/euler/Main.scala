@@ -1,6 +1,6 @@
 package euler
 
-import euler.problem._
+import euler.problems._
 
 object Main {
   def main(args: Array[String]) = {

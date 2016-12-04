@@ -1,4 +1,4 @@
-package euler.problem
+package euler.problems
 
 import euler.math.EulerMath
 

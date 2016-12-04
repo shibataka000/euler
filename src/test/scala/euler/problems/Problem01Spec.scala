@@ -1,4 +1,4 @@
-package euler.problem
+package euler.problems
 
 import org.specs2.mutable.Specification
 
