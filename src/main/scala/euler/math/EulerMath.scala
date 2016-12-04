@@ -15,20 +15,24 @@ object EulerMath {
   }
 
   def decompose(n: BigInt): List[BigInt] = {
-    def helper(a: BigInt, ps: Stream[BigInt]): List[BigInt] = 
-      if (a == 1) Nil
-      else if (a % ps.head == 0) ps.head :: helper(a / ps.head, ps)
-      else helper(a, ps.tail)
-    if (n == 1) List(1)
-    else helper(n, primes)
+    def helper(a: BigInt, ps: Stream[BigInt]): List[BigInt] = (a, ps) match {
+      case (a, ps) if a == 1 => Nil
+      case (a, ps) if a % ps.head == 0 => ps.head :: helper(a / ps.head, ps)
+      case (a, ps) => helper(a, ps.tail)
+    }
+    n match {
+      case n if n == 1 => List(1)
+      case n => helper(n, primes)
+    }
   }
 
   def isPalindromicNumber(n: BigInt): Boolean = n.toString == n.toString.reverse
 
-  def gcd(a: BigInt, b: BigInt): BigInt =
-    if (b > a) gcd(b, a)
-    else if (b == 0) a
-    else gcd(b, a % b)
+  def gcd(a: BigInt, b: BigInt): BigInt = (a, b) match {
+    case (a, b) if b > a => gcd(b, a)
+    case (a, b) if b == 0 => a
+    case (a, b) => gcd(b, a % b)
+  }
 
   def lcm(a: BigInt, b: BigInt): BigInt = a * b / gcd(a, b)
 }
